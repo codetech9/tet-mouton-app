@@ -1,2 +1,17 @@
-<h1>Lands#index</h1>
-<p>Find me in app/views/lands/index.html.erb</p>
+<h1 class="text-center">Tet-mouton</h1>
+
+<div class="container">
+  <div class="d-flex justify-content-around my-3 p-3 flex-wrap">
+    <% @lands.each do |land| %>
+      <%= link_to land_path(land), {:style => "text-decoration: none;"} do %>
+        <div class="card bg-success text-white p-3">
+          <%= land.location %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="text-center">
+    <%= link_to "Accueil", root_path, class: "btn btn-primary text-center" %>
+  </div>
+</div>
