@@ -1,0 +1,11 @@
+<div class="container">
+  <%= simple_form_for(@land) do |f| %>
+    <%= f.input :photo, as: :file %>
+    <%= f.input :location %>
+    <%= f.input :area %>
+    <%= f.input :price %>
+    <div class="text-center">
+      <%= f.submit "Valider" %>
+    </div>
+  <% end %>
+</div>
