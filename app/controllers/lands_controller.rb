@@ -19,7 +19,7 @@ class LandsController < ApplicationController
   end
 
   def update
-    @land = Land.update(land_params)
+    @land.update(land_params)
     redirect_to land_path(@land)
   end
 
@@ -38,6 +38,6 @@ class LandsController < ApplicationController
   end
 
   def land_params
-    params.require(:land).permit(:location, :area, :price)
+    params.require(:land).permit(:location, :area, :price, :photo)
   end
 end

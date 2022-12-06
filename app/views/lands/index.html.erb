@@ -1,11 +1,14 @@
-<h1 class="text-center">Tet-mouton</h1>
+<h1 class="text-center my-5">Tet-mouton</h1>
 
 <div class="container">
-  <div class="d-flex justify-content-around my-3 p-3 flex-wrap">
+  <div class="d-flex justify-content-between  my-4 flex-wrap">
     <% @lands.each do |land| %>
       <%= link_to land_path(land), {:style => "text-decoration: none;"} do %>
-        <div class="card bg-success text-white p-3">
-          <%= land.location %>
+        <div class="card text-dark m-3">
+          <%= cl_image_tag land.photo.key, height: 200, width: 200, crop: :fill, class: "mx-auto card-img-top" %>
+          <div class="card-body">
+            <h2 class="card-title"><%= land.location %></h2>
+          </div>
         </div>
       <% end %>
     <% end %>
